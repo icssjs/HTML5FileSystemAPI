@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    window.requestFielSystem = window.requestFielSystem || window.webkitRequestFileSystem;
+    function onInitFs(fs){
+        console.log(fs);
+    }
+    window.requestFielSystem(window.TEMPORARY,5*1024*1024,onInitFs,function(e){
+        console.log('error:'+e);
+    })
+</script>
+</body>
+</html>
